@@ -1,0 +1,14 @@
+image: py2-caffe
+assets:
+resources:
+  memory: 100M
+assets:
+- resnet_50_1by2_nsfw.caffemodel
+- deploy.prototxt
+input_space: 
+  image: image
+output_space: 
+  nude: str
+main:
+  type: python
+  entrypoint: serve_nudity.py::predict
